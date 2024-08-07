@@ -10,6 +10,7 @@ const List<Color> _colors = [
   Colors.teal,
   Colors.purple,
   Colors.orange,
+  Colors.transparent,
   _customColor
 ];  
 

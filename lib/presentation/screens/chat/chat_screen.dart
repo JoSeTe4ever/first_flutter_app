@@ -1,25 +1,31 @@
+import 'package:first_app/presentation/providers/chat_provider.dart';
 import 'package:first_app/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:first_app/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:first_app/presentation/widgets/shared/message_field_box.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundImage: const NetworkImage(
-                'https://yt3.googleusercontent.com/FbQt8VjI66HZnrgCeAgZeAetrAfrlHxDlUY7qaQbpJa3zMtXuOf1tHC18l07ELyqgiARbO8Q=s900-c-k-c0x00ffffff-no-rj'),
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => ChatProvider())],
+      child: Scaffold(
+        appBar: AppBar(
+          leading: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: const NetworkImage(
+                  'https://yt3.googleusercontent.com/FbQt8VjI66HZnrgCeAgZeAetrAfrlHxDlUY7qaQbpJa3zMtXuOf1tHC18l07ELyqgiARbO8Q=s900-c-k-c0x00ffffff-no-rj'),
+            ),
           ),
+          title: const Text('Chat Screen'),
+          centerTitle: true,
         ),
-        title: const Text('Chat Screen'),
-        centerTitle: true,
+        body: _ChatView(),
       ),
-      body: _ChatView(),
     );
   }
 }
@@ -41,7 +47,8 @@ class _ChatView extends StatelessWidget {
               itemBuilder: (context, index) => index % 2 == 0
                   ? const HerMessageBubble()
                   : const MyMessageBubble(),
-            ))
+            )),
+            MessageFieldBox(),
           ],
         ),
       ),
