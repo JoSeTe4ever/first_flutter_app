@@ -3,13 +3,23 @@ import 'package:flutter/material.dart';
 
 class ChatProvider extends ChangeNotifier {
 
-  List<Message> messages = [
+  final ScrollController chatScrollController = ScrollController(); 
+
+  List<Message> messageList = [
     Message(text: 'Hola', fromWho: FromWho.hers),
     Message(text: 'Adios', fromWho: FromWho.mine),
   ];
 
   Future<void> sendMessage(String text) async {
-    messages.add(Message(text: text, fromWho: FromWho.mine));
+    messageList.add(Message(text: text, fromWho: FromWho.mine));
     notifyListeners();
+  }
+
+  void scrollToBottom() {
+    chatScrollController.animateTo(
+      chatScrollController.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+    );
   }
 }
