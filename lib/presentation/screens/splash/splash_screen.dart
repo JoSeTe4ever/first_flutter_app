@@ -1,3 +1,6 @@
+import 'package:first_app/presentation/screens/splash/slides/logo.dart';
+import 'package:first_app/presentation/screens/splash/slides/personal_data.dart';
+import 'package:first_app/presentation/screens/splash/slides/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -22,10 +25,10 @@ class _SwipeablePageViewState extends State<SwipeablePageView> {
         children: [
           PageView(
             controller: _pageController,
-            children: [
-              Container(color: Colors.red),
-              Container(color: Colors.green),
-              Container(color: Colors.blue),
+            children:  [
+              const LogoPage(),
+              PersonalDataPage(),
+              const WelcomePage(),
             ],
           ),
           Positioned(

@@ -8,12 +8,12 @@ class LogoPage extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/background_image.png'),
+          image: AssetImage('assets/images/background_image.png'),
           fit: BoxFit.cover,
         ),
       ),
       child: Center(
-        child: Image.asset('assets/logo.png'),
+        child: Image.asset('assets/images/logo.png'),
       ),
     );
   }
