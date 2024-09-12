@@ -1,4 +1,4 @@
-import 'package:first_app/core/services/astrology-service.dart.dart';
+import 'package:first_app/core/services/astrology-service.dart';
 import 'package:first_app/domain/entities/birth_card_request.dart';
 import 'package:flutter_test/flutter_test.dart';
 
