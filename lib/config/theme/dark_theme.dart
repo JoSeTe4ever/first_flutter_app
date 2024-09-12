@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: Colors.deepPurple,
-  se: Colors.purpleAccent,
+  secondaryHeaderColor: Colors.purpleAccent,
   scaffoldBackgroundColor: Colors.black,
   appBarTheme: AppBarTheme(
     color: Colors.deepPurple,
@@ -13,8 +13,7 @@ final ThemeData darkTheme = ThemeData(
     textTheme: ButtonTextTheme.primary,
   ),
   textTheme: TextTheme(
-    bodyText1: TextStyle(color: Colors.white),
-    bodyText2: TextStyle(color: Colors.white70),
+    bodyMedium: TextStyle(color: Colors.white),
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,

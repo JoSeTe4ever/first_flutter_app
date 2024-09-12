@@ -21,3 +21,10 @@ Para el tema de AI
 https://dribbble.com/shots/24219959-Design-Concept-for-Horoscope-App
 
 https://arthub.ai/ 
+
+
+TODO:
+
+- [ ] Implementar la API de horóscopo
+- [ ] Guardar la API key de manera segura
+- 
