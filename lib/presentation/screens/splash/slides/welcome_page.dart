@@ -1,6 +1,8 @@
 import 'package:first_app/presentation/screens/counter_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../birth_info/birth_info_screen.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -22,7 +24,7 @@ class WelcomePage extends StatelessWidget {
                 // Navigate to the next screen
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => CounterScreen()),
+                  MaterialPageRoute(builder: (context) => BirthInfoScreen()),
                 );
               },
               child: Text('Get Started'),
